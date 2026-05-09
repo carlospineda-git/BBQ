@@ -1,0 +1,113 @@
+{
+  "config": {
+    "openHour": 0,
+    "closeHour": 24
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": "BBQ Chicken",
+      "price": 120,
+      "stock": 0,
+      "salesCount": 10,
+      "img": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d"
+    },
+    {
+      "id": 2,
+      "name": "Pork BBQ",
+      "price": 100,
+      "stock": 4,
+      "salesCount": 17,
+      "img": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1778329790388,
+      "name": "Carlos",
+      "address": "Ametrine, Block 48, Lot 50",
+      "cart": [
+        {
+          "id": 2,
+          "name": "Pork BBQ",
+          "price": 100,
+          "stock": 4,
+          "salesCount": 4,
+          "img": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+          "qty": 1
+        }
+      ],
+      "total": 100,
+      "status": "Completed",
+      "ip": "::1",
+      "date": "2026-05-09T12:29:50.388Z",
+      "rated": false
+    },
+    {
+      "id": 1778357033220,
+      "name": "Carlos",
+      "address": "Ametrine, Block 48, Lot 50",
+      "cart": [
+        {
+          "id": 2,
+          "name": "Pork BBQ",
+          "price": 100,
+          "stock": 3,
+          "salesCount": 5,
+          "img": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+          "qty": 1
+        }
+      ],
+      "total": 100,
+      "status": "Completed",
+      "ip": "::ffff:127.0.0.1",
+      "date": "2026-05-09T20:03:53.220Z",
+      "rated": true,
+      "rating": 5,
+      "comment": ""
+    },
+    {
+      "id": 1778357096010,
+      "name": "Carlos",
+      "address": "Ametrine, Block 48, Lot 50",
+      "cart": [
+        {
+          "id": 2,
+          "name": "Pork BBQ",
+          "price": 100,
+          "stock": 10,
+          "salesCount": 6,
+          "img": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+          "qty": 10
+        }
+      ],
+      "total": 1000,
+      "status": "Completed",
+      "ip": "::1",
+      "date": "2026-05-09T20:04:56.010Z",
+      "rated": false
+    },
+    {
+      "id": 1778357518055,
+      "name": "Carlos",
+      "address": "Ametrine, Block 48, Lot 50",
+      "cart": [
+        {
+          "id": 2,
+          "name": "Pork BBQ",
+          "price": 100,
+          "stock": 5,
+          "salesCount": 16,
+          "img": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+          "qty": 1
+        }
+      ],
+      "total": 100,
+      "status": "Pending",
+      "ip": "::1",
+      "date": "2026-05-09T20:11:58.055Z",
+      "rated": false
+    }
+  ],
+  "bannedIPs": []
+}
