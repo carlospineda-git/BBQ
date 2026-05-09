@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BBQ Shop</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+<div id="closedMsg" class="store-banner hidden"></div>
+<header>🔥 BBQ Shop</header>
+
+<div id="shopPage">
+  <div class="container">
+    <div class="search-box">
+      <input id="search" placeholder="Search BBQ..." oninput="filterProducts()">
+    </div>
+    <div class="products" id="products"></div>
+  </div>
+  <div class="floating-cart" id="floatCart" onclick="toggleCart()">🛒 <span id="cartCount">0</span></div>
+</div>
+
+<div id="activityPage" class="hidden container">
+  <div class="activity-header">
+    <h1>Activity</h1>
+    <div style="display:flex; gap:10px;">
+        <button onclick="openAddressManager()" class="addr-manage-btn">Addresses 📍</button>
+    </div>
+  </div>
+  <div id="recentOrdersList"><p style="text-align:center; color:gray; padding:20px;">No recent orders.</p></div>
+</div>
+
+
+<div class="cart" id="cartPanel">
+  <h3>Shopping Cart</h3>
+  <div id="cart"></div>
+  <p class="total-text">Total: ₱<span id="total">0</span></p>
+  <div id="selectedAddressPreview" class="addr-preview-box" onclick="openAddressManager()">
+    <strong>Deliver to:</strong> <span id="currentAddrName">Choose Address</span>
+  </div>
+  <div class="g-recaptcha" data-sitekey="6Ld1l9osAAAAAJ4DfiMKrQVuCAoXkhJHPavcAmjO"></div>
+  <button onclick="placeOrder()" id="checkoutBtn" class="checkout-btn">Checkout</button>
+  <button onclick="toggleCart()" class="close-btn">Close</button>
+</div>
+
+<div id="addressModal" class="cart">
+  <h3>Select Address</h3>
+  <div id="addressList"></div>
+  <button onclick="toggleAddAddressForm()" class="add-addr-btn">+ New Address</button>
+  <div id="addAddressForm" class="hidden">
+    <input id="new_name" placeholder="Name">
+    <input id="new_street" placeholder="Street">
+    <input id="new_block" placeholder="Block">
+    <input id="new_lot" placeholder="Lot">
+    <button onclick="saveNewAddress()" class="save-btn">Save</button>
+  </div>
+  <button onclick="closeAddressManager()" class="close-btn">Cancel</button>
+</div>
+
+<div id="ratingModal" class="rating-overlay hidden">
+  <div class="rating-card">
+    <h3>Rate Order</h3>
+    <div class="stars" id="starInput">
+      <span onclick="setRate(1)">⭐</span>
+      <span onclick="setRate(2)">⭐</span>
+      <span onclick="setRate(3)">⭐</span>
+      <span onclick="setRate(4)">⭐</span>
+      <span onclick="setRate(5)">⭐</span>
+    </div>
+    <textarea id="rateComment" placeholder="Optional comment..."></textarea>
+    <button onclick="submitReview()" class="save-btn">Submit</button>
+    <button onclick="closeRating()" class="close-btn">Close</button>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <button class="nav-btn active" id="navHome" onclick="showPage('shop')">🏠 Home</button>
+  <button class="nav-btn" id="navActivity" onclick="showPage('activity')">📋 Activity</button>
+</nav>
+
+<script src="index.js"></script>
+</body>
+</html>

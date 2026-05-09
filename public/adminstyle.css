@@ -1,0 +1,108 @@
+:root {
+  --primary: #d84315;
+  --secondary: #ff7043;
+  --bg: #f4f6f9;
+  --card: #fff;
+  --text: #111;
+  --success: #4CAF50;
+  --info: #2196F3;
+  --danger: #ff1744;
+}
+
+body { margin:0; font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); padding-bottom: 40px; }
+header { background: #111; color: #fff; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 100; margin-bottom: 20px;}
+header h1 { margin: 0; font-size: 20px; }
+
+.container { padding: 0 15px; max-width: 1100px; margin: auto; }
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.card h2, .card h3 { margin-top: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.inventory-grid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.flex-header {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+}
+
+.login-box { max-width: 400px; margin: 50px auto; }
+
+.status-banner {
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.status-open { background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; }
+.status-closed { background: #ffebee; color: #c62828; border: 1px solid #c62828; }
+
+.sales-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--primary);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+label { font-size: 12px; color: var(--primary); font-weight: bold; display: block; margin-bottom: 4px;}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 5px 0 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus { outline: none; border-color: var(--primary); }
+
+button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover { opacity: 0.9; }
+.btn-danger { background: var(--danger); }
+.btn-success { background: var(--success); }
+.btn-outline { background: none; border: 1px solid var(--primary); color: var(--primary); }
+
+.hidden { display: none !important; }
+
+#ptr-msg { text-align: center; color: #666; font-size: 12px; margin-top: -10px; margin-bottom: 10px; }
+
+/* Product Edit Card Styling */
+.product-edit-card { border: 1px solid #eee; position: relative; display: flex; flex-direction: column; }
+.product-edit-card img { width:100%; height:140px; object-fit:cover; border-radius:8px; margin-bottom:10px; }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .flex-header { flex-direction: column; align-items: stretch; text-align: center; }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel - BBQ Shop</title>
+<link rel="stylesheet" href="adminstyle.css">
+</head>
+<body>
+
+<header><h1>🔐 BBQ Admin Panel</h1></header>
+
+<div class="container">
+
+  <div id="loginBox" class="card login-box">
+    <h2>Admin Access</h2>
+    <input id="username" placeholder="Username">
+    <input id="password" type="password" placeholder="Password">
+    <button onclick="login()" style="width: 100%; margin-top: 10px;">Login to Dashboard</button>
+  </div>
+
+  <div id="panel" class="hidden">
+    
+    <div id="storeStatusContainer" class="status-banner">Checking status...</div>
+    
+    <div class="card">
+      <h2>🕒 Set Operating Hours</h2>
+      <div class="grid hour-settings">
+        <div>
+          <label>Opening Time (24h Format)</label>
+          <input type="number" id="openTimeInput" min="0" max="23" placeholder="e.g. 10">
+        </div>
+        <div>
+          <label>Closing Time (24h Format)</label>
+          <input type="number" id="closeTimeInput" min="0" max="23" placeholder="e.g. 21">
+        </div>
+      </div>
+      <button onclick="updateStoreHours()" style="margin-top: 10px; width: 100%;">Save New Hours</button>
+    </div>
+
+    <div class="card">
+      <h2>Add New Product</h2>
+      <div class="grid">
+        <input id="new-name" placeholder="Product Name">
+        <input id="new-price" type="number" placeholder="Price (₱)">
+        <input id="new-stock" type="number" placeholder="Initial Stock">
+        <input id="new-img" placeholder="Image URL">
+      </div>
+      <button onclick="addProduct()" style="margin-top:15px; width: 100%;">+ Create Product</button>
+    </div>
+
+    <div class="card">
+      <div class="flex-header">
+        <h2>Inventory & Sales Tracking</h2>
+        <button onclick="loadProducts()" class="btn-outline">Refresh Data</button>
+      </div>
+      <div id="products" class="grid inventory-grid"></div>
+    </div>
+
+    <div class="card">
+      <h3>🚫 Blacklisted Users (IP)</h3>
+      <div id="bannedList">
+        <p style="color:gray;">Loading blacklist...</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="flex-header" style="margin-bottom: 15px;">
+        <h2>Live Orders</h2>
+        <button onclick="clearOrders()" class="btn-danger">Clear All History</button>
+      </div>
+      <p id="ptr-msg">Auto-refreshing every 5 seconds...</p>
+      <div id="orders"></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
