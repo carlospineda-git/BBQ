@@ -135,7 +135,7 @@ app.post('/order', orderLimiter, async (req, res) => {
   }
 
   try {
-    const secretKey = "6Ld1l9osAAAAAI5ARRHS-G4Vu9vzfvE6fRTKbEO1"; 
+    const secretKey = "6Ldsz-IsAAAAAA8r3frSZVy75R_Gpr6If0u5HMNc"; 
     const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captchaToken}`;
     const googleRes = await fetch(verifyUrl, { method: 'POST' });
     const googleData = await googleRes.json();
